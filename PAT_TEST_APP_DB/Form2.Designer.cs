@@ -30,7 +30,7 @@
         {
             this.pbconnection = new System.Windows.Forms.PictureBox();
             this.lblapplication = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_close = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbconnection)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,23 +54,24 @@
             this.lblapplication.TabIndex = 1;
             this.lblapplication.Text = "label1";
             // 
-            // button1
+            // btn_close
             // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(634, 8);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Close";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_close.BackColor = System.Drawing.Color.Gray;
+            this.btn_close.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_close.Location = new System.Drawing.Point(634, 571);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(75, 23);
+            this.btn_close.TabIndex = 2;
+            this.btn_close.Text = "Close";
+            this.btn_close.UseVisualStyleBackColor = false;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // formview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(721, 626);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_close);
             this.Controls.Add(this.lblapplication);
             this.Controls.Add(this.pbconnection);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -88,6 +89,6 @@
 
         private System.Windows.Forms.PictureBox pbconnection;
         private System.Windows.Forms.Label lblapplication;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_close;
     }
 }

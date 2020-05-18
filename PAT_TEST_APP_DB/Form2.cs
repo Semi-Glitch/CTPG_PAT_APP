@@ -13,19 +13,28 @@ namespace PAT_TEST_APP_DB
 {
     public partial class formview : Form
     {
+        /**************************
+         * All connection objects
+         *************************/
         SQLiteConnection my_connect;
+
+        /****************************
+         * Loads data from last form
+         ***************************/
         public formview(SQLiteConnection con_name)
         {
             InitializeComponent();
             my_connect = con_name;
         }
 
+        /*******************************
+        * View form load functionality
+        *******************************/
         private void formview_Load(object sender, EventArgs e)
         {
             lblapplication.Text = "CTPG Pat Test Application";
             try
             {
-                my_connect = new SQLiteConnection("Data Source = pat.db");
                 my_connect.Open();
                 pbconnection.BackColor = Color.Green;
             }
@@ -36,6 +45,14 @@ namespace PAT_TEST_APP_DB
                 my_connect.Close();
                 this.Close();
             }
+        }
+
+        /*******************************
+        * Close button funtionality
+        *******************************/
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
