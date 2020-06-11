@@ -59,7 +59,7 @@ namespace PAT_TEST_APP_DB
         ********************************/
         private void viewbtn_Click(object sender, EventArgs e)
         {
-            formview viewform = new formview(myconnect);
+            formview viewform = new formview();
             viewform.Show();
         }
     }
