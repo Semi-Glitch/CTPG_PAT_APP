@@ -18,6 +18,7 @@ namespace PAT_TEST_APP_DB
          *************************/
         public SQLiteConnection myconnect = new SQLiteConnection("Data Source = pat.db");
         //define ADO.NET objects
+        SQLiteConnection dbCon;
         SQLiteDataAdapter daItems;
         DataTable dtItems = new DataTable();
         int rowAt;
@@ -39,8 +40,7 @@ namespace PAT_TEST_APP_DB
             lblapplication.Text = "CTPG Pat Test Application";
             try
             {
-                myconnect.Open();
-                string sqlcommand = @"select * from customer";
+                string sqlcommand = @"select * from Pat test xml table";
                 //create DataAdapter and use to fill DataTable
                 daItems = new SQLiteDataAdapter(sqlcommand, myconnect);
                 daItems.Fill(dtItems);
@@ -48,6 +48,7 @@ namespace PAT_TEST_APP_DB
                 rowAt = 0;
                 showrecord();
 
+                myconnect.Open();
                 pbconnection.BackColor = Color.Green;
             }
             catch
@@ -63,12 +64,20 @@ namespace PAT_TEST_APP_DB
         {
             //Display data in row "rowAT" of the DataTable
             DataRow row = dtItems.Rows[rowAt];
-            lblcustid.Text = "Customer Identification number:" + row["custid"].ToString();
-            lbltitle.Text = "Title: " + row["title"].ToString();
-            lblfname.Text = "First Name: " + row["firstname"].ToString();
-            lbllname.Text = "Last Name: " + row["lastname"].ToString();
-            lblemail.Text = "Customer Contact Email: " + row["email"].ToString();
-            lblallowance.Text = "Customer allowance: " + row["allowance"].ToString();
+
+            //Reflbl.Text = "Refereance number:"           + row["Ref No"].ToString();
+            //lstknwnloclbl.Text = "Last Known Location: " + row["Last Known Locations"].ToString();
+            //desclbl.Text = "Description: "               + row["Description"].ToString();
+            //manafactlbl.Text = "Manafacture: "           + row["Manafacturer"].ToString();
+            //modeltypelbl.Text = "Model Type: "           + row["Model/Type"].ToString();
+            //voltslbl.Text = "Volts: "                    + row["Volts"].ToString();
+            //wattsamplbl.Text = "Watts/Amps: "            + row["Watts/Amps"].ToString();
+            //classlbl.Text = "Class: "                    + row["Class"].ToString();
+            //testdatelbl.Text = "Test Date: "             + row["Test Date"].ToString();
+            //retestlbl.Text = "Retest interval: "         + row["Re-test Interval"].ToString();
+            //expirylbl.Text = "Expiry date: "             + row["Expiry Date"].ToString();
+            //newctpglbl.Text = "Newt to CTPG: "           + row["New to CTPG"].ToString();
+            //commentlbl.Text = "Comments: "               + row["Comments"].ToString();
         }
 
         /*******************************
